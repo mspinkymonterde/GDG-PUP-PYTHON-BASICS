@@ -9,14 +9,11 @@ def create_greeting(name):
     """
     return f"Hello {name}, welcome to the GDG Web Development Team! You're doing great, and I truly believe that someday you'll be an amazing developer. Life may feel challenging right now, and programming can be overwhelming at times, but remember, all your hard work will pay off in the end. Keep pushing forward, you're on the right path!"
 
-# Main program
-try:
-    # Get the user's name
-    name = input("Enter your name: ")
+while True:
+    name = input("Enter your name: ").strip()
+    if name.isalpha() or (" " in name and name.replace(" ", "").isalpha()):
+        break
+    print("Invalid input: Please enter your name (no numbers and special character).")
 
-    # Create and display the greeting message
-    greeting = create_greeting(name)
-    print(f"The greeting message is: {greeting}")
-
-except ValueError:
-    print("Invalid input: Please enter a valid name.")
+# Display the greeting message
+print(create_greeting(name))

@@ -16,6 +16,7 @@ try:
         print("You are categorized as: Adult")
     else:
         print("You are categorized as: Senior")
+
         
 except ValueError:
     print("Invalid input: Age cannot be a non-number.")
